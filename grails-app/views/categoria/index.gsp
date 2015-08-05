@@ -12,7 +12,7 @@
                 <section id="taskCreation">
                     <nav>
     		<a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
-		<g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+		<g:link class="create" action="create">Adicionar Categoria</g:link>
 				
                     </nav>	
 		 
@@ -21,27 +21,45 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="categoria" title="${message(code: 'categoria.categoria.label', default: 'Categoria')}" />
-					
-					</tr>
-				</thead>
+			<table id="tblTasks">
+                <colgroup>
+                    <col width="70%">
+                    <col width="20%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
 				<tbody>
-				<g:each in="${categoriaInstanceList}" status="i" var="categoriaInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${categoriaInstance.id}">${fieldValue(bean: categoriaInstance, field: "categoria")}</g:link></td>
-					
-					</tr>
-				</g:each>
+				<!--<g:each in="${categoriaInstanceList}" status="i" var="categoriaInstance">
+				 <td><g:link action="edit" id="${categoriaInstance.id}">${fieldValue(bean: categoriaInstance, field: "categoria")}</g:link></td>
+				 </g:each>-->
+                                <g:each in="${categoriaInstanceList}" status="i" var="categoriaInstance">                                    
+                    <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">                    
+                        <td>${categoriaInstance.categoria} </td>                
+                                            
+                        <td>                            
+                            <g:form resource="${categoriaInstance}" method="DELETE">
+                            <fieldset class="buttons" style="background-color: transparent!important; -webkit-box-shadow: none!important;">
+                                                              
+                                <g:link class="edit" action="edit" resource="${categoriaInstance}">
+                                <g:message code="default.button.edit.label" default="Edit" />
+                                </g:link>  &nbsp;&nbsp;                       
+                                <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+                            </fieldset>
+                        </g:form>
+                        </td>
+                     </tr>
+                     </g:each>
 				</tbody>
 			</table>
 			<div class="pagination">
 				<g:paginate total="${categoriaInstanceCount ?: 0}" />
 			</div>
+                        <footer>Total de Categorias: <span id="taskCount">${categoriaInstanceCount}</span></footer>
+		
 		</div>
                 </section>
                     </main>

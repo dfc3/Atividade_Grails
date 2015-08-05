@@ -7,13 +7,12 @@
 	</head>
 	<body>
             <main id="taskPage">
-                <section id="taskCreation">
-                    <nav>
-    		 <a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a> 
-		 <g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link> 
-			  </nav>
-		 
+                <section id="taskCreation"> 
+  <nav>
+    		<a class="home" href="${createLink(uri: '/')}"> Voltar</a>
+			 </nav>
 		<div id="create-tarefa" class="content scaffold-create" role="main">
+			<h1>Adição de Nova Tarefa</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -27,21 +26,11 @@
 			<g:form url="[resource:tarefaInstance, action:'save']" >
 				<fieldset class="form">
 					<g:render template="form"/>
-                            <f:with bean="tarefaInstance">
-                        <f:field property="tarefa"/>
-                        <f:field property="deadline"/>
-                       <f:field property="categoria">
-                            <g:select name="categoria" from="${['Pessoal', 'Profissional']}" noSelection="${['null':'Select One...']}" value="${tarefaInstance.categoria}"/>
-                        </f:field>
-                    </f:with>              
-				</fieldset>
+				</fieldset><br/>
 				<fieldset class="buttons">
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
 			</g:form>
 		</div>
-                
-                </section>
-                    </main>
 	</body>
 </html>

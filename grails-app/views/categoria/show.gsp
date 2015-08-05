@@ -11,16 +11,15 @@
 	<main id="taskPage">
                 <section id="taskCreation">
                     <nav>
-    		 <a class="home" href="${createLink(uri: '/')}">Principal</a>
-		 <g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link>
-		  <g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+    		 <a class="home" href="${createLink(uri: '/categoria')}">Voltar</a>
+		  <g:link class="create" action="create">Nova Categoria</g:link>
 			
                     </nav>	
              
 		<div id="show-categoria" class="content scaffold-show" role="main"> 
-			<g:if test="${flash.message}">
+			<g:if test="${flash.message}"><br/>
 			<div class="message" role="status">${flash.message}</div>
-			</g:if>
+			</g:if><br/>
 			<ol class="property-list categoria">
 			
 				<g:if test="${categoriaInstance?.categoria}">
@@ -32,7 +31,7 @@
 				
 				</g:if>
 			
-			</ol>
+			</ol><br/>
 			<g:form url="[resource:categoriaInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
 					<g:link class="edit" action="edit" resource="${categoriaInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

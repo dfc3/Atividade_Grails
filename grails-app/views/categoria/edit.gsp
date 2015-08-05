@@ -10,10 +10,8 @@
             <main id="taskPage">
                 <section id="taskCreation">
                     <nav>
-    		 <a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a> 
-		 <g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link> 
-		<g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link> 
-			 </nav>
+    		 <a class="home" href="${createLink(uri: '/categoria')}">Voltar</a> 
+		 </nav>
 		 
 		<div id="edit-categoria" class="content scaffold-edit" role="main"> 
 			<g:if test="${flash.message}">

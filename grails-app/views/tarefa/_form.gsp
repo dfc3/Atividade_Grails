@@ -29,12 +29,3 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: tarefaInstance, field: 'complete', 'error')} required">
-	<label for="complete">
-		<g:message code="tarefa.complete.label" default="Complete" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="complete" type="number" value="${tarefaInstance.complete}" required=""/>
-
-</div>
-

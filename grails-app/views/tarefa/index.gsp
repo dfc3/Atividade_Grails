@@ -11,8 +11,8 @@
             <main id="taskPage">
                 <section id="taskCreation">
                     <nav>
-    		<g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
-                <a href="categoria/create">Adicionar Categorias</a>
+    		<g:link class="create" action="create">Adicionar Tarefa</g:link>
+                <a href="categoria">Administrar Categorias</a>
                     </nav>
                 	
                 
@@ -54,10 +54,10 @@
                                 <g:if test="${tarefaInstance.complete == 0}">                                
                                 <g:link class="edit" action="edit" resource="${tarefaInstance}" disabled="disabled">
                                 <g:message code="default.button.edit.label" default="Edit" />
-                                </g:link>
+                                </g:link> &nbsp;&nbsp;
                                 <g:link class="complete"  action="complete" resource="${tarefaInstance}">
                                 <g:message code="default.button.complete.label" default="Completar" />
-                                </g:link>
+                                </g:link>&nbsp;&nbsp;
                                 </g:if>
                                 <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
                             </fieldset>
