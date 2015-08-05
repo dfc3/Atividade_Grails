@@ -71,6 +71,7 @@
 			<div class="pagination">
 				<g:paginate total="${tarefaInstanceCount ?: 0}" />
 			</div>
+                        <footer>Total de Tarefas: <span id="taskCount">${tarefaInstanceCount}</span></footer>
 		</div>
                 </section>
                     </main>

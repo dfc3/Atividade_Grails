@@ -6,7 +6,7 @@ import grails.transaction.Transactional
 class TarefaController {
 
     static scaffold = true
-    
+        
     @Transactional
     def complete(Tarefa tarefaInstance) {
         if (tarefaInstance == null) {
@@ -22,7 +22,6 @@ class TarefaController {
         }
         tarefaInstance.complete = 1
         tarefaInstance.save flush:true
-
         redirect action: "index"
     }
 }

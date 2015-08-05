@@ -11,7 +11,7 @@
 		<span>Lista de Tarefas</span>
 	</header>
 	<g:layoutBody/>	
-	<footer>Total de Tarefas: <span id="taskCount">${tarefaInstanceCount}</span></footer>
+	
           
 </body>
 
